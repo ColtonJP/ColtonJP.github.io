@@ -23,7 +23,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          position: relative
         }
 
       #right_nav{
@@ -57,7 +56,14 @@
           min-height: fit-content;
           width: 100px;
 
-
+      }
+      #hidden{
+          font-family: 'Merienda', cursive;
+          color: black;
+          display: none;
+      }
+      img{
+          text-align: left;
       }
 
 
@@ -82,21 +88,27 @@
                 </div>
             </div>
         </nav>
-        <div id= background class="flex-container">
+        <div id="open" class="flex-container">
+
+            <div id = "hidden">
+                Hello
+                <img src="https://i.imgur.com/GvDhY8y.jpg" style= "height: 300px;"/>
+            </div>
+
         <div id="left">
-            <div id="animate"><h2>C</h2></div>
-            <div id="animate"><h2>o</h2></div>
-            <div id="animate"><h2>l</h2></div>
-            <div id="animate"><h2>t</h2></div>
-            <div id="animate"><h2>o</h2></div>
-            <div id="animate"><h2>n</h2></div>
+            <div><h2>C</h2></div>
+            <div><h2>o</h2></div>
+            <div><h2>l</h2></div>
+            <div><h2>t</h2></div>
+            <div><h2>o</h2></div>
+            <div><h2>n</h2></div>
         </div>
         <div id="mid">
-            <div id="animate"><h2>J</h2></div>
-            <div id="animate"><h2>a</h2></div>
-            <div id="animate"><h2>m</h2></div>
-            <div id="animate"><h2>e</h2></div>
-            <div id="animate"><h2>s</h2></div>
+            <div><h2>J</h2></div>
+            <div><h2>a</h2></div>
+            <div><h2>m</h2></div>
+            <div><h2>e</h2></div>
+            <div><h2>s</h2></div>
         </div>
 
         <div id ="right">
@@ -109,16 +121,24 @@
          </div>
          </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script>
-
-        let background = document.querySelector('#background');
-        let left = document.querySelector('#left');
-        let mid = document.querySelector('#mid');
-        let right = document.querySelector('#right');
-
+        let hidden = document.querySelector("#hidden");
         window.onclick = function(){
+            TweenMax.to("#left", 2, {x:-100, opacity: 0});
+            TweenMax.to("#mid", 2, {y:100 , opacity:0.0});
+            TweenMax.to("#right", 2, {x:100, opacity: 0,onComplete: white})
+        };
 
+        function white(){
+            TweenMax.to("#open", 1, {backgroundColor: "#FFFFFF"})
+            hidden.style.display = "block"
         }
+
+
+
+
+
     </script>
   </body>
 </html>
