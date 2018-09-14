@@ -19,43 +19,45 @@
           font-family: 'Slabo 27px', serif;
           box-shadow: none!important;
       }
-      #background{
-          margin-bottom: 0;
-          position: absolute;
-          z-index: -1;
-      }
+      .flex-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative
+        }
+
       #right_nav{
       background-color: black;
       }
+
       #right_nav > ul li a{
           color: white;
           background-color: black;
       }
+
 	  #left{
           font-family: 'Merienda', cursive;
-          text-align: right;
+          text-align: center;
           color: white;
-          background-color: black;
-          min-height: 100vh;
-          width: border-box;
-
-
-
+          width: min-content;
+          padding: 10px
       }
+
       #mid{
           font-family: 'Merienda', cursive;
           color: white;
           text-align: left;
-          text-shadow: 1px ;
-          min-height: fit-content;
-          padding-top: 30px;
+          width: min-content;
+          padding: 10px;
       }
+
       #right{
           font-family: 'Merienda', cursive;
           color: white;
-          text-align: right;
-          text-shadow: 1px ;
           min-height: fit-content;
+          width: 100px;
+
+
       }
 
 
@@ -80,30 +82,31 @@
                 </div>
             </div>
         </nav>
-        <div id= background class="container row">
-        <div id="left" class="col s6">
-            <div><h1>C</h1></div>
-            <div><h1>o</h1></div>
-            <div><h1>l</h1></div>
-            <div><h1>t</h1></div>
-            <div><h1>o</h1></div>
-            <div><h1>n</h1></div>
+        <div id= background class="flex-container">
+        <div id="left">
+            <div id="animate"><h2>C</h2></div>
+            <div id="animate"><h2>o</h2></div>
+            <div id="animate"><h2>l</h2></div>
+            <div id="animate"><h2>t</h2></div>
+            <div id="animate"><h2>o</h2></div>
+            <div id="animate"><h2>n</h2></div>
         </div>
-        <div id="mid" class="col s6">
-            <div><h1>J</h1></div>
-            <div><h1>a</h1></div>
-            <div><h1>m</h1></div>
-            <div><h1>e</h1></div>
-            <div><h1>s</h1></div>
+        <div id="mid">
+            <div id="animate"><h2>J</h2></div>
+            <div id="animate"><h2>a</h2></div>
+            <div id="animate"><h2>m</h2></div>
+            <div id="animate"><h2>e</h2></div>
+            <div id="animate"><h2>s</h2></div>
         </div>
-        </div>
-        <div id ="right" class="col s6">
+
+        <div id ="right">
            <p> I am a software developer that dabbles in a little bit of everything.</p>
 
 
-       <div id = foreground
 
 
+
+         </div>
          </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -112,18 +115,10 @@
         let left = document.querySelector('#left');
         let mid = document.querySelector('#mid');
         let right = document.querySelector('#right');
-        window.onclick = function () {
-           if (background.style.display === "none") {
-                background.style.display = "block";}
-           else { background.style.display = "none";
-            }
+
+        window.onclick = function(){
 
         }
-
-
-
-
-
     </script>
   </body>
 </html>
