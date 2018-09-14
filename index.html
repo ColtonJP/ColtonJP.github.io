@@ -82,25 +82,45 @@
         </nav>
         <div id= background class="container row">
         <div id="left" class="col s6">
-            <h1>C<br>o<br>l<br>t<br>o<br>n</h1>
+            <div><h1>C</h1></div>
+            <div><h1>o</h1></div>
+            <div><h1>l</h1></div>
+            <div><h1>t</h1></div>
+            <div><h1>o</h1></div>
+            <div><h1>n</h1></div>
         </div>
         <div id="mid" class="col s6">
-            <h1>J<br>a<br>m<br>e<br>s</h1>
+            <div><h1>J</h1></div>
+            <div><h1>a</h1></div>
+            <div><h1>m</h1></div>
+            <div><h1>e</h1></div>
+            <div><h1>s</h1></div>
+        </div>
         </div>
         <div id ="right" class="col s6">
            <p> I am a software developer that dabbles in a little bit of everything.</p>
-        </div>
 
+
+       <div id = foreground
 
 
          </div>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        let
-        window.onclick = function () {
 
+        let background = document.querySelector('#background');
+        let left = document.querySelector('#left');
+        let mid = document.querySelector('#mid');
+        let right = document.querySelector('#right');
+        window.onclick = function () {
+           if (background.style.display === "none") {
+                background.style.display = "block";}
+           else { background.style.display = "none";
+            }
 
         }
+
+
 
 
 
