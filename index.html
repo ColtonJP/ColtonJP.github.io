@@ -19,7 +19,8 @@
           font-family: 'Slabo 27px', serif;
           box-shadow: none!important;
       }
-      .flex-container {
+      #behind
+      #front{
           display: flex;
           align-items: center;
           justify-content: center;
@@ -57,15 +58,28 @@
           width: 100px;
 
       }
-      #hidden{
+      #hidden_right{
           font-family: 'Merienda', cursive;
           color: black;
           display: none;
+          width: fit-content;
       }
-      img{
-          text-align: left;
+      #hidden_left{
+          font-family: 'Merienda', cursive;
+          color: black;
+          display: none;
+          border-right: darkred;
+          border-right-style: double;
+          border-width: thick;
+          width: fit-content;
       }
-
+      #hidden_title{
+          font-family: 'Merienda', cursive;
+          color: black;
+          display: none;
+          text-align: center;
+          width: 100%;
+      }
 
 
 
@@ -88,13 +102,23 @@
                 </div>
             </div>
         </nav>
-        <div id="open" class="flex-container">
+        <div id="behind" class="flex-container">
+            <h1 id= hidden_title >About me</h1>
 
-            <div id = "hidden">
-                Hello
-                <img src="https://i.imgur.com/GvDhY8y.jpg" style= "height: 300px;"/>
+            <div id = "hidden_left">
+
+                <br>Education:
+                <br>Brooklyn College; BFA Creative Writing
+                <br>PDX Code School; Full Stack Developer Bootcamp
             </div>
-
+            <div id = "hidden_right" >
+               Familiar Languages;
+                <br>Python
+                <br>HTML/CSS
+                <br>JavaScript
+                <br>Django
+            </div>
+        <div id="front" class="flex-container">
         <div id="left">
             <div><h2>C</h2></div>
             <div><h2>o</h2></div>
@@ -123,7 +147,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script>
-        let hidden = document.querySelector("#hidden");
+
         window.onclick = function(){
             TweenMax.to("#left", 2, {x:-100, opacity: 0});
             TweenMax.to("#mid", 2, {y:100 , opacity:0.0});
@@ -131,8 +155,10 @@
         };
 
         function white(){
-            TweenMax.to("#open", 1, {backgroundColor: "#FFFFFF"})
-            hidden.style.display = "block"
+            TweenMax.to("#behind", 1, {backgroundColor: "#FFFFFF"});
+            hidden_left.style.display = "block";
+            hidden_right.style.display = "block";
+            hidden_title.style.display = "block"
         }
 
 
