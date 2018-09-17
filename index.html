@@ -19,7 +19,9 @@
           font-family: 'Slabo 27px', serif;
           box-shadow: none!important;
       }
-      #behind
+      #behind{
+
+      }
       #front{
           display: flex;
           align-items: center;
@@ -62,7 +64,8 @@
           font-family: 'Merienda', cursive;
           color: black;
           display: none;
-          width: fit-content;
+          flex-direction: row ;
+          text-align: center;
       }
       #hidden_left{
           font-family: 'Merienda', cursive;
@@ -71,13 +74,15 @@
           border-right: darkred;
           border-right-style: double;
           border-width: thick;
-          width: fit-content;
+          flex-direction: row;
+          text-align: center;
       }
       #hidden_title{
           font-family: 'Merienda', cursive;
           color: black;
           display: none;
           text-align: center;
+          flex-direction: column;
           width: 100%;
       }
 
@@ -102,16 +107,16 @@
                 </div>
             </div>
         </nav>
-        <div id="behind" class="flex-container">
+        <div id="behind" class="container">
             <h1 id= hidden_title >About me</h1>
 
-            <div id = "hidden_left">
+            <div id = "hidden_left" class="col s6">
 
                 <br>Education:
                 <br>Brooklyn College; BFA Creative Writing
                 <br>PDX Code School; Full Stack Developer Bootcamp
             </div>
-            <div id = "hidden_right" >
+            <div id ="hidden_right"class="col s6" >
                Familiar Languages;
                 <br>Python
                 <br>HTML/CSS
@@ -156,9 +161,10 @@
 
         function white(){
             TweenMax.to("#behind", 1, {backgroundColor: "#FFFFFF"});
-            hidden_left.style.display = "block";
-            hidden_right.style.display = "block";
-            hidden_title.style.display = "block"
+            hidden_left.style.display = "flex";
+            hidden_right.style.display = "flex";
+            hidden_title.style.display = "flex";
+            front.style.display = "none"
         }
 
 
