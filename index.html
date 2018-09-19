@@ -20,7 +20,9 @@
           box-shadow: none!important;
       }
       #behind{
-
+          width:100%;
+          justify-content: center;
+          text-align: center;
       }
       #front{
           display: flex;
@@ -64,18 +66,17 @@
           font-family: 'Merienda', cursive;
           color: black;
           display: none;
-          flex-direction: row ;
-          text-align: center;
+          border-left: darkred;
+          border-left-style: double;
+          border-width: 2px;
       }
       #hidden_left{
           font-family: 'Merienda', cursive;
           color: black;
           display: none;
-          border-right: darkred;
-          border-right-style: double;
-          border-width: thick;
-          flex-direction: row;
-          text-align: center;
+          text-justify: auto;
+
+
       }
       #hidden_title{
           font-family: 'Merienda', cursive;
@@ -107,16 +108,16 @@
                 </div>
             </div>
         </nav>
-        <div id="behind" class="container">
+        <div id="behind" class="flex-container">
             <h1 id= hidden_title >About me</h1>
 
-            <div id = "hidden_left" class="col s6">
+            <div id = "hidden_left">
 
                 <br>Education:
                 <br>Brooklyn College; BFA Creative Writing
                 <br>PDX Code School; Full Stack Developer Bootcamp
             </div>
-            <div id ="hidden_right"class="col s6" >
+            <div id ="hidden_right">
                Familiar Languages;
                 <br>Python
                 <br>HTML/CSS
@@ -161,8 +162,8 @@
 
         function white(){
             TweenMax.to("#behind", 1, {backgroundColor: "#FFFFFF"});
-            hidden_left.style.display = "flex";
-            hidden_right.style.display = "flex";
+            hidden_left.style.display = "inline-block";
+            hidden_right.style.display = "inline-block";
             hidden_title.style.display = "flex";
             front.style.display = "none"
         }
